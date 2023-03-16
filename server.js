@@ -31,20 +31,21 @@ app.get('/app/rpsls/play', (req, res) => {
     res.status(200).send(rpsls(req.query.shot));
 })
 
-app.get('/app/rps/play/:arg', (req, res) => {
-    res.status(200).send(rps(req.params.arg));
-})
-
-app.get('/app/rpsls/play/:arg', (req, res) => {
-    res.status(200).send(rpsls(req.params.arg));
-})
-
 app.post('/app/rps/play', (req, res) => {
     res.status(200).send(rps(req.body.shot));
 })
 
 app.post('/app/rpsls/play', (req, res) => {
     res.status(200).send(rpsls(req.body.shot));
+})
+
+
+app.get('/app/rps/play/:shot', (req, res) => {
+    res.status(200).send(rps(req.params.shot));
+})
+
+app.get('/app/rpsls/play/:shot', (req, res) => {
+    res.status(200).send(rpsls(req.params.shot));
 })
 
 app.get('*', (req, res) => {
